@@ -3,9 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "challenge1": "node src/challenge1-sum/index.js",
+    "challenge2": "node src/challenge2-fibonacci/index.js",
+    "challenge3": "node src/challenge3-billing-analysis/index.js",
+    "challenge4": "node src/challenge4-state-percentage/index.js",
+    "challenge5": "node src/challenge5-string-reverse/index.js",
+    "all-challenges": "npm run challenge1 && npm run challenge2 && npm run challenge3 && npm run challenge4 && npm run challenge5"
   },
-  "author": "",
+  "author": "Daniele Minatto",
+  "keywords": [
+    "javascript",
+    "algorithms",
+    "coding-challenges"
+  ],
   "license": "ISC",
   "description": "",
   "dependencies": {

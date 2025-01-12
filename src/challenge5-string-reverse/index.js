@@ -1,16 +1,24 @@
 const prompt = require("prompt-sync")();
 
-function reverseString(text) {
-  let reversedText = "";
-  for (let i = text.length - 1; i >= 0; i--) {
-    reversedText += text[i];
+function stringReverser() {
+  const text = prompt("Enter text to reverse: ");
+
+  function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversed += str[i];
+    }
+    return reversed;
   }
-  return reversedText;
+
+  const result = reverseString(text);
+  console.log(`Original text: ${text}`);
+  console.log(`Reversed text: ${result}`);
+  return result;
 }
 
-function reverseStringArray(text) {
-  return Array.from(text).reduce((acc, char) => char + acc, "");
+if (require.main === module) {
+  stringReverser();
+} else {
+  module.exports = stringReverser;
 }
-
-const text = prompt("Enter a text:");
-console.log(`Reversed text: ${reverseString(text)}`);

@@ -1,21 +1,32 @@
 const prompt = require("prompt-sync")();
 
-function verifyFibonacci(num) {
-  let firstNumber = 0;
-  let secondNumber = 1;
+function fibonacciChecker() {
+  const number = parseInt(prompt("Enter a number to check: "));
 
-  while (secondNumber < num) {
-    let temp = secondNumber;
-    secondNumber = firstNumber + secondNumber;
-    firstNumber = temp;
+  function checkFibonacci(num) {
+    let firstNumber = 0;
+    let secondNumber = 1;
+
+    while (secondNumber < num) {
+      let temp = secondNumber;
+      secondNumber = firstNumber + secondNumber;
+      firstNumber = temp;
+    }
+
+    return secondNumber === num || num === 0;
   }
 
-  return secondNumber === num || num === 0;
+  const result = checkFibonacci(number);
+  console.log(
+    `${number} ${
+      result ? "belongs" : "does not belong"
+    } to the Fibonacci sequence`
+  );
+  return result;
 }
 
-const number = parseInt(prompt("Digite um número:"));
-if (verifyFibonacci(number)) {
-  console.log(`${number} pertence à sequência de Fibonacci`);
+if (require.main === module) {
+  fibonacciChecker();
 } else {
-  console.log(`${number} NÃO pertence à sequência de Fibonacci`);
+  module.exports = fibonacciChecker;
 }

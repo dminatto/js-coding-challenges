@@ -42,10 +42,21 @@ npm install
 
 ## 📖 Usage
 
-Each challenge can be run independently. Navigate to the specific challenge directory and run:
+Each challenge can be run independently or in a interactive menu
 
 ```bash
-node index.js
+# Run individual challenges
+npm run challenge1
+npm run challenge2
+npm run challenge3
+npm run challenge4
+npm run challenge5
+
+# Run all challenges sequentially
+npm run all-challenges
+
+# Run the interactive menu
+npm start
 ```
 
 ## 📁 Project Structure
